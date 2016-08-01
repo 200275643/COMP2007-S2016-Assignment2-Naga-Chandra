@@ -8,7 +8,7 @@ namespace COMP2007_S2016_Assignment2_Naga_Chandra.Models
     public partial class RestaurantModel : DbContext
     {
         public RestaurantModel()
-            : base("name=Restaurantconnection")
+            : base("name=RestaurantModel")
         {
         }
 
