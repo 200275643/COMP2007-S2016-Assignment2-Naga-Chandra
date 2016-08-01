@@ -1,0 +1,61 @@
+﻿@model COMP2007_S2016_Assignment2_Naga_Chandra.Models.MenuItem
+@{
+    ViewBag.Title = "Delete";
+}
+@*File: Delete.cshtml
+    Authors: Naga, Chandra
+    Website: http://comp2007-s2016-assignment2-restaurant.azurewebsites.net
+    Description: This page is used to delete a menu item*@
+<h2>Delete</h2>
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MenuItems</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ItemName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ItemPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortDesc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ShortDesc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LongDesc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LongDesc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ThumbnailURL)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ThumbnailURL)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FullsizeURL)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FullsizeURL)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

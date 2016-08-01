@@ -1,0 +1,56 @@
+﻿@model IEnumerable<COMP2007_S2016_Assignment2_Naga_Chandra.Models.MenuItem>
+@{
+    ViewBag.Title = "Index";
+}
+@*File: Contact.cshtml
+    Authors: Naga, Chandra
+    Website: http://comp2007-s2016-assignment2-restaurant.azurewebsites.net
+    Description: This page displays all menu items*@
+<h2>Index</h2>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            <p>Name</p>
+        </th>
+        <th>
+            <p>Price</p>
+        </th>
+        <th>
+            <p>Description</p>
+        </th>
+        <th>
+
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.ItemName, "Details", new { id = item.ID })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDesc)
+            </td>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.ThumbnailURL)" />
+            </td>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            }
+        </tr>
+    }
+</table>
