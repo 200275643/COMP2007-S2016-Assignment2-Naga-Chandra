@@ -11,7 +11,7 @@ using COMP2007_S2016_Assignment2_Naga_Chandra.Models;
 
 //File: Contact.cshtml
 //Authors: Naga, Chandra
-//Website: http://comp2007-s2016-assignment2-restaurant.azurewebsites.net
+//Website: http://comp2007assignmentrestaurant.azurewebsites.net/
 //Description: Auto generated controller for the menu items 
 
 namespace COMP2007_S2016_Assignment2_Naga_Chandra.Controllers
