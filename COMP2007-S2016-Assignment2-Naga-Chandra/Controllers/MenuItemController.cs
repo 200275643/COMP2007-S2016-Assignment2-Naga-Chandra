@@ -118,7 +118,12 @@ namespace COMP2007_S2016_Assignment2_Naga_Chandra.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
-     
+        {
+            MenuItem menuItems = await db.MenuItems.FindAsync(id);
+            db.MenuItems.Remove(menuItems);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
 
         protected override void Dispose(bool disposing)
         {
